@@ -19,7 +19,7 @@ def decode(string):
     return decoded_password
 
 # Main function.
-if __name__ == "__main__":
+def main():
     while True:
         print("Menu")
         print("-------------")
@@ -38,3 +38,5 @@ if __name__ == "__main__":
         elif option == 3:
             exit()
 
+if __name__ == "__main__":
+    main()
