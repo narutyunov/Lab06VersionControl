@@ -10,6 +10,14 @@ def encode(password_to_encode):
 
     return encoded_password
 
+def decode(string):
+    strlist = [int(i) for i in string]
+    for i, a in enumerate(strlist):
+        strlist[i] = str(strlist[i] - 3)
+    delimiter = ""
+    decoded_password = delimiter.join(strlist)
+    return decoded_password
+
 # Main function.
 if __name__ == "__main__":
     while True:
@@ -23,8 +31,10 @@ if __name__ == "__main__":
 
         if option == 1:
             password = input("Please enter your password to encode: ")
-            encode(password)
+            stored_password = encode(password)
             print("Your password has been encoded and stored!")
+        elif option == 2:
+            print(f"The encoded password is {stored_password}, and the original password is {decode(stored_password)}")
         elif option == 3:
             exit()
 
